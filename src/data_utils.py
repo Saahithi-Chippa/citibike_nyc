@@ -524,7 +524,7 @@ def fetch_batch_raw_data(
         year=historical_from_date.year, months=[historical_from_date.month]
     )
     rides_from = rides_from[
-        rides_from.pickup_datetime >= historical_from_date.to_datetime64()
+        rides_from.start_datetime >= historical_from_date.to_datetime64()
     ]
 
     if historical_to_date.month != historical_from_date.month:
@@ -532,7 +532,7 @@ def fetch_batch_raw_data(
             year=historical_to_date.year, months=[historical_to_date.month]
         )
         rides_to = rides_to[
-            rides_to.pickup_datetime < historical_to_date.to_datetime64()
+            rides_to.start_datetime < historical_to_date.to_datetime64()
         ]
         # Combine the filtered data
         rides = pd.concat([rides_from, rides_to], ignore_index=True)
