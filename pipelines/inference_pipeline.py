@@ -27,7 +27,7 @@ ts_data = feature_view.get_batch_data(
     start_time = (fetch_data_from - timedelta(days=1)),
     end_time = (fetch_data_to + timedelta(days=1))
 )
-ts_data = ts_data[ts_data.pickup_hour.between(fetch_data_from, fetch_data_to)]
+ts_data = ts_data[ts_data.start_hour.between(fetch_data_from, fetch_data_to)]
 ts_data.sort_values(["start_station_id", "start_hour"]).reset_index(drop = True)
 ts_data["start_hour"] = ts_data["start_hour"].dt.tz_localize(None)
 
