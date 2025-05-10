@@ -76,7 +76,7 @@ def load_model_from_registry(version=None):
     models = model_registry.get_models(name=config.MODEL_NAME)
     model = max(models, key=lambda model: model.version)
     model_dir = model.download()
-    model = joblib.load(Path(model_dir) / "lgb_model.pkl")
+    model = joblib.load(Path(model_dir) / "lgbmodel.pkl")
 
     return model
 
