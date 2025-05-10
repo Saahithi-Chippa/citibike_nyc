@@ -51,7 +51,7 @@ if test_mae < metric.get("test_mae"):
         metrics = {"test_mae": test_mae},
         description="LightGBM regressor V2",
         input_example=features.sample(),
-        model_schema = model_schema,
+        model_schema = model_schema
     )
     modelv2.save(str(model_path))
 else:
