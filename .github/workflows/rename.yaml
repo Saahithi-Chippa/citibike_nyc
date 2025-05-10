@@ -1,0 +1,9 @@
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rename the temp file
+        run: |
+          mv /tmp/lgbmodel.pkl /tmp/lgb_model.pkl
+          echo "Renamed to /tmp/lgb_model.pkl"
+
