@@ -47,7 +47,7 @@ if test_mae < metric.get("test_mae"):
     project = get_hopsworks_project()
     model_registry = project.get_model_registry()
     modelv2 = model_registry.sklearn.create_model(
-        name = "taxi_demand_predictor_next_hour",
+        name = "citibike_demand_predictor",
         metrics = {"test_mae": test_mae},
         description="LightGBM regressor V2",
         input_example=features.sample(),
