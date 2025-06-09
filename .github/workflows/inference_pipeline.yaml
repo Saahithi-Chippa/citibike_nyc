@@ -1,11 +1,14 @@
 name: citibike_rides_hourly_inference_pipeline
-
 on:
-  workflow_run:
-    workflows: ["citibike_rides_hourly_features_pipeline"]
-    types:
-      - completed
+  schedule:
+    - cron: '2 1 * * 0' # Runs at 01:02
   workflow_dispatch: # Allows manual triggering of the workflow
+# on:
+#   workflow_run:
+#     workflows: ["citibike_rides_hourly_features_pipeline"]
+#     types:
+#       - completed
+#   workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
   run-python-script:
