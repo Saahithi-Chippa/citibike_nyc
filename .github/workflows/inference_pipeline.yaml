@@ -1,7 +1,8 @@
 name: citibike_rides_hourly_inference_pipeline
+
 on:
   schedule:
-    - cron: '2 1 * * 0' # Runs at 01:02
+    - cron: '5 * * * *' # Runs every hour
   workflow_dispatch: # Allows manual triggering of the workflow
 # on:
 #   workflow_run:
